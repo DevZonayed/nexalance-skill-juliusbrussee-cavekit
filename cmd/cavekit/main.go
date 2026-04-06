@@ -7,12 +7,12 @@ import (
 	osexec "os/exec"
 	"path/filepath"
 
-	"github.com/julb/blueprint-monitor/internal/exec"
-	"github.com/julb/blueprint-monitor/internal/site"
-	"github.com/julb/blueprint-monitor/internal/session"
-	"github.com/julb/blueprint-monitor/internal/tmux"
-	"github.com/julb/blueprint-monitor/internal/tui"
-	"github.com/julb/blueprint-monitor/internal/worktree"
+	"github.com/JuliusBrussee/cavekit/internal/exec"
+	"github.com/JuliusBrussee/cavekit/internal/site"
+	"github.com/JuliusBrussee/cavekit/internal/session"
+	"github.com/JuliusBrussee/cavekit/internal/tmux"
+	"github.com/JuliusBrussee/cavekit/internal/tui"
+	"github.com/JuliusBrussee/cavekit/internal/worktree"
 )
 
 const version = "v0.1.0"
@@ -31,14 +31,14 @@ func main() {
 	case "kill":
 		runKill()
 	case "version":
-		fmt.Println("blueprint-monitor", version)
+		fmt.Println("cavekit", version)
 	case "debug":
 		runDebug()
 	case "reset":
 		runReset()
 	default:
 		fmt.Fprintf(os.Stderr, "unknown command: %s\n", cmd)
-		fmt.Fprintln(os.Stderr, "usage: blueprint [monitor|status|kill|version|debug|reset]")
+		fmt.Fprintln(os.Stderr, "usage: cavekit [monitor|status|kill|version|debug|reset]")
 		os.Exit(1)
 	}
 }
@@ -97,7 +97,7 @@ func runStatus() {
 	}
 
 	if len(worktrees) == 0 {
-		fmt.Println("No Blueprint worktrees found.")
+		fmt.Println("No Cavekit worktrees found.")
 		return
 	}
 

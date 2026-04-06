@@ -126,7 +126,7 @@ function countDoneTasks(projectRoot: string, frontierContent: string): number {
     const parentDir = resolve(projectRoot, "..");
     const siblings = readdirSync(parentDir);
     for (const sibling of siblings) {
-      if (sibling.startsWith(`${projectName}-blueprint-`)) {
+      if (sibling.startsWith(`${projectName}-cavekit-`)) {
         scanImplFilesForDone(join(parentDir, sibling, "context/impl"), doneSet);
       }
     }
@@ -154,7 +154,7 @@ function detectStatus(
 
   // Check if a worktree exists for this frontier
   const projectName = basename(projectRoot);
-  const worktreePath = resolve(projectRoot, `../${projectName}-blueprint-${name}`);
+  const worktreePath = resolve(projectRoot, `../${projectName}-cavekit-${name}`);
   if (existsSync(worktreePath)) {
     // Check if ralph loop is active in the worktree
     const ralphState = join(worktreePath, ".claude/ralph-loop.local.md");
@@ -254,7 +254,7 @@ async function main() {
     }
 
     // Write selected paths to outfile (env var) or stdout
-    const outfile = process.env.BLUEPRINT_PICKER_OUTFILE;
+    const outfile = process.env.CAVEKIT_PICKER_OUTFILE;
     const output = selected.join("\n") + "\n";
     if (outfile) {
       writeFileSync(outfile, output);

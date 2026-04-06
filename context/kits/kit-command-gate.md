@@ -3,7 +3,7 @@ created: "2026-03-31T00:00:00Z"
 last_edited: "2026-03-31T00:00:00Z"
 ---
 
-# Blueprint: Command Gate
+# Cavekit: Command Gate
 
 ## Scope
 A PreToolUse hook that intercepts Bash tool calls, classifies command safety using Codex (gpt-5.4-mini), and blocks unsafe commands before execution. Integrates with Claude Code's existing allow/block permission system and caches verdicts by normalized command pattern.
@@ -70,7 +70,7 @@ User settings for the command gate.
 - Reviewing commands after execution (post-hoc audit)
 
 ## Cross-References
-- See also: blueprint-codex-bridge.md (R1 for Codex detection, R2 for shared config mechanism)
+- See also: cavekit-codex-bridge.md (R1 for Codex detection, R2 for shared config mechanism)
 
 ## Changelog
 - 2026-03-31: Initial draft

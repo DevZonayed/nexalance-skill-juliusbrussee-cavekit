@@ -3,11 +3,11 @@ created: "2026-04-01T11:50:00Z"
 last_edited: "2026-04-01T11:50:00Z"
 ---
 
-# Blueprint: Documentation Page
+# Cavekit: Documentation Page
 
 ## Scope
 
-A single-file (`docs.html`) documentation page with sticky sidebar navigation, deployed alongside `index.html` on the `gh-pages` branch. Contains the full Blueprint reference: overview, quick start, commands, methodology, Codex integration, skills reference, configuration, and file structure. Shares the same visual identity as the landing page. Zero dependencies, zero build step.
+A single-file (`docs.html`) documentation page with sticky sidebar navigation, deployed alongside `index.html` on the `gh-pages` branch. Contains the full Cavekit reference: overview, quick start, commands, methodology, Codex integration, skills reference, configuration, and file structure. Shares the same visual identity as the landing page. Zero dependencies, zero build step.
 
 ## Requirements
 
@@ -33,7 +33,7 @@ A single-file (`docs.html`) documentation page with sticky sidebar navigation, d
 **Description:** Fixed top navigation bar.
 **Acceptance Criteria:**
 - [ ] Fixed at top of viewport, glassmorphism blur background
-- [ ] Left: "Blueprint" text logo (links to `index.html`)
+- [ ] Left: "Cavekit" text logo (links to `index.html`)
 - [ ] Right: "GitHub" link + version badge pill `v2.1.0`
 - [ ] Hamburger menu button visible on tablet/mobile (hidden on desktop)
 - [ ] Height ~56px, z-index above sidebar and content
@@ -47,7 +47,7 @@ A single-file (`docs.html`) documentation page with sticky sidebar navigation, d
   - Overview
   - Quick Start (children: Greenfield, Brownfield)
   - Commands (children: all 10 `/bp:*` commands)
-  - Methodology (children: DABI Lifecycle, Blueprints as Source of Truth, Scientific Method Applied)
+  - Methodology (children: DABI Lifecycle, Kits as Source of Truth, Scientific Method Applied)
   - Codex Integration (children: Design Challenge, Tier Gate, Speculative Review, Command Safety Gate, Graceful Degradation)
   - Skills Reference (children: all 13 skills)
   - Configuration (children: Settings Reference, File Structure)
@@ -67,9 +67,9 @@ A single-file (`docs.html`) documentation page with sticky sidebar navigation, d
 - [ ] Heading: "On this page" in monospace, muted
 
 ### R6: Overview Section
-**Description:** Introduction to what Blueprint is and the DABI lifecycle.
+**Description:** Introduction to what Cavekit is and the DABI lifecycle.
 **Acceptance Criteria:**
-- [ ] Content explains: what Blueprint is, who it's for, the core idea (specification layer between intent and code)
+- [ ] Content explains: what Cavekit is, who it's for, the core idea (specification layer between intent and code)
 - [ ] Brief DABI lifecycle summary with the 4 phases
 - [ ] Links to each phase's detailed section in Commands and Methodology
 - [ ] Content derived from README "The Idea" and "How It Works" intro sections
@@ -84,7 +84,7 @@ A single-file (`docs.html`) documentation page with sticky sidebar navigation, d
 - [ ] Content derived from README "Quick Start" section
 
 ### R8: Commands Section
-**Description:** Reference for all Blueprint slash commands.
+**Description:** Reference for all Cavekit slash commands.
 **Acceptance Criteria:**
 - [ ] Each command gets its own subsection with:
   - Command name in monospace heading (e.g., `/bp:draft`)
@@ -97,20 +97,20 @@ A single-file (`docs.html`) documentation page with sticky sidebar navigation, d
 - [ ] Content derived from README "Commands" section + individual command descriptions
 
 ### R9: Methodology Section
-**Description:** The Blueprint methodology and philosophy.
+**Description:** The Cavekit methodology and philosophy.
 **Acceptance Criteria:**
-- [ ] Three subsections: The DABI Lifecycle, Blueprints as Source of Truth, Scientific Method Applied
+- [ ] Three subsections: The DABI Lifecycle, Kits as Source of Truth, Scientific Method Applied
 - [ ] DABI Lifecycle: detailed walkthrough of each phase with what it produces and why
-- [ ] Blueprints as Source of Truth: explains why specs drive development, not memory
-- [ ] Scientific Method: maps hypothesis→test→observe→refine to blueprints→gates→loops→revision
-- [ ] Content derived from README "Methodology" and "Why Blueprint" sections
+- [ ] Kits as Source of Truth: explains why specs drive development, not memory
+- [ ] Scientific Method: maps hypothesis→test→observe→refine to kits→gates→loops→revision
+- [ ] Content derived from README "Methodology" and "Why Cavekit" sections
 
 ### R10: Codex Integration Section
 **Description:** Full documentation of the Codex adversarial review system.
 **Acceptance Criteria:**
 - [ ] Five subsections: Design Challenge, Tier Gate, Speculative Review, Command Safety Gate, Graceful Degradation
 - [ ] Each subsection explains: what it does, when it triggers, how it works, configuration options
-- [ ] Design Challenge: the pre-build blueprint review flow
+- [ ] Design Challenge: the pre-build cavekit review flow
 - [ ] Tier Gate: severity levels (P0-P3), gate modes, fix cycle behavior
 - [ ] Speculative Review: background review overlapping with build, timeout behavior
 - [ ] Command Safety Gate: allowlist/blocklist, Codex classification, verdict cache
@@ -118,10 +118,10 @@ A single-file (`docs.html`) documentation page with sticky sidebar navigation, d
 - [ ] Content derived from README "Codex Adversarial Review" section
 
 ### R11: Skills Reference Section
-**Description:** Reference for all 13 Blueprint skills.
+**Description:** Reference for all 13 Cavekit skills.
 **Acceptance Criteria:**
 - [ ] Each skill gets a card/entry with: name, one-line description, when to use it
-- [ ] Skills covered: Blueprint Writing, Convergence Monitoring, Peer Review, Validation-First Design, Context Architecture, Revision, Brownfield Adoption, Speculative Pipeline, Prompt Pipeline, Implementation Tracking, Documentation Inversion, Peer Review Loop, Core Methodology
+- [ ] Skills covered: Cavekit Writing, Convergence Monitoring, Peer Review, Validation-First Design, Context Architecture, Revision, Brownfield Adoption, Speculative Pipeline, Prompt Pipeline, Implementation Tracking, Documentation Inversion, Peer Review Loop, Core Methodology
 - [ ] Content derived from README skills list + individual skill descriptions in `skills/` directory
 
 ### R12: Configuration Section
@@ -186,7 +186,7 @@ A single-file (`docs.html`) documentation page with sticky sidebar navigation, d
 - Content is a reformatted presentation of existing README and skill files — no new technical writing
 
 ## Cross-References
-- See also: blueprint-landing-page.md (shares visual identity system, linked from docs top bar and "Back to Home")
+- See also: cavekit-landing-page.md (shares visual identity system, linked from docs top bar and "Back to Home")
 - Landing page R1 (Visual Identity) is the source of truth for shared design tokens
 
 ## Changelog

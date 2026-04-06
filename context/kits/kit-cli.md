@@ -6,56 +6,56 @@ last_edited: "2026-03-19T00:00:00Z"
 # Spec: CLI Interface
 
 ## Scope
-The command-line interface that replaces the current `blueprint` bash script. Provides the `blueprint` binary with subcommands for monitor, status, kill, and analytics.
+The command-line interface that replaces the current `cavekit` bash script. Provides the `cavekit` binary with subcommands for monitor, status, kill, and analytics.
 
 ## Requirements
 
 ### R1: Binary and Installation
-**Description:** A single Go binary named `blueprint` that can be installed via `go install` or downloaded.
+**Description:** A single Go binary named `cavekit` that can be installed via `go install` or downloaded.
 **Acceptance Criteria:**
 - [ ] Compiles to a single static binary
-- [ ] Module path: `github.com/julb/blueprint-monitor` (or similar)
-- [ ] Supports `go install github.com/julb/blueprint-monitor@latest`
-- [ ] Binary name is `blueprint` (or `blueprint-monitor` to avoid conflict with the existing `blueprint` script)
+- [ ] Module path: `github.com/JuliusBrussee/cavekit` (or similar)
+- [ ] Supports `go install github.com/JuliusBrussee/cavekit@latest`
+- [ ] Binary name is `cavekit` (or `cavekit` to avoid conflict with the existing `cavekit` script)
 **Dependencies:** none
 
 ### R2: Monitor Command (Default)
 **Description:** The primary command that launches the TUI.
 **Acceptance Criteria:**
-- [ ] `blueprint` or `blueprint monitor` launches the TUI
+- [ ] `cavekit` or `cavekit monitor` launches the TUI
 - [ ] `--program <cmd>` overrides the default program (default: `claude`)
 - [ ] `--autoyes` / `-y` enables auto-approval of permission prompts
 - [ ] Preflight checks: tmux installed, program (claude) installed, git repo detected
 - [ ] Loads persisted instances from previous session
-**Dependencies:** R1, blueprint-tui R1
+**Dependencies:** R1, cavekit-tui R1
 
 ### R3: Status Command
 **Description:** Shows site progress without launching the TUI.
 **Acceptance Criteria:**
-- [ ] `blueprint status` prints per-worktree progress to stdout
+- [ ] `cavekit status` prints per-worktree progress to stdout
 - [ ] Format: `{name}: {icon} {done}/{total} tasks done`
 - [ ] Works from any terminal (doesn't require the TUI to be running)
 - [ ] Exits after printing
-**Dependencies:** R1, blueprint-site R3, blueprint-worktree R3
+**Dependencies:** R1, cavekit-site R3, cavekit-worktree R3
 
 ### R4: Kill Command
-**Description:** Stops all Blueprint sessions and cleans up.
+**Description:** Stops all Cavekit sessions and cleans up.
 **Acceptance Criteria:**
-- [ ] `blueprint kill` kills all `blueprint_*` tmux sessions
-- [ ] Removes all `{project}-blueprint-*` worktrees
-- [ ] Deletes all `blueprint/*` branches
+- [ ] `cavekit kill` kills all `cavekit_*` tmux sessions
+- [ ] Removes all `{project}-cavekit-*` worktrees
+- [ ] Deletes all `cavekit/*` branches
 - [ ] Cleans up `.claude/ralph-loop.local.md` from project root and worktrees
 - [ ] Reports count of killed sessions, cleaned worktrees, deleted branches
-**Dependencies:** R1, blueprint-tmux R1, blueprint-worktree R1
+**Dependencies:** R1, cavekit-tmux R1, cavekit-worktree R1
 
 ### R5: Configuration
 **Description:** Persistent configuration for the monitor.
 **Acceptance Criteria:**
-- [ ] Config file at `~/.blueprint-monitor/config.json`
+- [ ] Config file at `~/.cavekit/config.json`
 - [ ] Configurable: default_program, stagger_delay, max_instances (default 10)
-- [ ] `blueprint debug` prints config paths for troubleshooting
-- [ ] `blueprint reset` clears all stored instances
-- [ ] `blueprint version` prints the version
+- [ ] `cavekit debug` prints config paths for troubleshooting
+- [ ] `cavekit reset` clears all stored instances
+- [ ] `cavekit version` prints the version
 **Dependencies:** R1
 
 ## Out of Scope
@@ -64,8 +64,8 @@ The command-line interface that replaces the current `blueprint` bash script. Pr
 - Plugin system
 
 ## Cross-References
-- See also: blueprint-tui.md (monitor launches TUI)
-- See also: blueprint-session.md (persistence paths)
+- See also: cavekit-tui.md (monitor launches TUI)
+- See also: cavekit-session.md (persistence paths)
 
 ## Changes
 - 2026-03-17: R2 acceptance criteria clarified — must parse --autoyes/-y flag and pass to TUI (finding F-010)

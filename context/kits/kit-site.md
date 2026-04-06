@@ -6,7 +6,7 @@ last_edited: "2026-03-19T00:00:00Z"
 # Spec: Site Discovery and Tracking
 
 ## Scope
-Finding site files, parsing their task structure, and tracking task completion from implementation files. This is the Blueprint-specific intelligence that claude-squad doesn't have.
+Finding site files, parsing their task structure, and tracking task completion from implementation files. This is the Cavekit-specific intelligence that claude-squad doesn't have.
 
 ## Requirements
 
@@ -82,6 +82,6 @@ The following requirements were added after tracing manual bug fixes back to spe
 - Spec file parsing (site references specs but doesn't need their content)
 
 ## Cross-References
-- See also: blueprint-session.md (sessions are tied to sites)
-- See also: blueprint-tui.md (TUI displays site progress)
-- See also: blueprint-spec-sync.md (drift detection reads task-to-requirement mappings)
+- See also: cavekit-session.md (sessions are tied to sites)
+- See also: cavekit-tui.md (TUI displays site progress)
+- See also: cavekit-spec-sync.md (drift detection reads task-to-requirement mappings)

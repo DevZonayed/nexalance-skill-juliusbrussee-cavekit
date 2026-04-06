@@ -3,7 +3,7 @@ created: "2026-03-31T00:00:00Z"
 last_edited: "2026-03-31T00:00:00Z"
 ---
 
-# Blueprint: Speculative Pre-Build Review
+# Cavekit: Speculative Pre-Build Review
 
 ## Scope
 Run Codex adversarial review of the previous tier in the background while Claude builds the current tier. By the time the current tier finishes, the review of the previous tier is already complete, cutting tier gate latency to near-zero.
@@ -49,8 +49,8 @@ Settings to control speculative review behavior.
 - Modifying the Codex plugin's background job mechanism
 
 ## Cross-References
-- See also: blueprint-tier-gate.md (speculative review feeds into tier gate gating logic)
-- See also: blueprint-codex-bridge.md (R1 for detection, R3 for review invocation)
+- See also: cavekit-tier-gate.md (speculative review feeds into tier gate gating logic)
+- See also: cavekit-codex-bridge.md (R1 for detection, R3 for review invocation)
 - Pattern reference: skills/speculative-pipeline/SKILL.md (same staggered-start principle applied to review)
 
 ## Changelog

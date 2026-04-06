@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# blueprint-status-poller — Background process that updates tmux pane/window titles
-# with per-frontier progress. Runs until the blueprint session is gone.
+# cavekit-status-poller — Background process that updates tmux pane/window titles
+# with per-frontier progress. Runs until the cavekit session is gone.
 
 set -uo pipefail
 
-SESSION_NAME="blueprint"
+SESSION_NAME="cavekit"
 POLL_INTERVAL=5
 TASK_ID_PATTERN='T-([A-Za-z0-9]+-)*[A-Za-z0-9]+'
 

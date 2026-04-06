@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# blueprint-analytics — Show trends across Blueprint execution cycles.
+# cavekit-analytics — Show trends across Cavekit execution cycles.
 # Parses loop-log.md files (current + archived) to extract:
 #   - Iterations to convergence per cycle
 #   - Common failure patterns (dead ends, blocked tasks)
@@ -41,7 +41,7 @@ if [[ ${#LOGS[@]} -eq 0 ]]; then
 fi
 
 printf "\n${B}${BL}  ┌──────────────────────────┐${R}\n"
-printf "${B}${BL}  │  B L U E P R I N T       │${R}\n"
+printf "${B}${BL}  │  C A V E K I T       │${R}\n"
 printf "${B}${BL}  └──────────────────────────┘${R}\n"
 printf "${B}${BL}  Analytics${R}\n"
 echo "${BL}${D}$(printf '%.0s─' $(seq 1 60))${R}"
@@ -57,7 +57,7 @@ total_blocked=0
 total_dead_ends=0
 
 # Use a temp file for tier counts (avoids bash 3 associative array limitation)
-TIER_FILE=$(mktemp /tmp/blueprint-tiers-XXXXXX)
+TIER_FILE=$(mktemp /tmp/cavekit-tiers-XXXXXX)
 trap 'rm -f "$TIER_FILE"' EXIT
 
 for log in "${LOGS[@]}"; do

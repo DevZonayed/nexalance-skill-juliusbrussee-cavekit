@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# blueprint-launch-session — Creates a tmux session with one pane per build site.
+# cavekit-launch-session — Creates a tmux session with one pane per build site.
 # Each pane runs Claude in the project directory with /bp:build.
 #
-# Usage: blueprint-launch-session.sh [--expanded] <frontier-path> [<frontier-path> ...]
+# Usage: cavekit-launch-session.sh [--expanded] <frontier-path> [<frontier-path> ...]
 #
 # Default: all panes in one window (horizontal for 2-3, tiled for 4+)
 # --expanded: one window per frontier with progress+activity dashboard panes
@@ -11,7 +11,7 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SESSION_NAME="blueprint"
+SESSION_NAME="cavekit"
 EXPANDED=false
 STAGGER_DELAY=5
 
@@ -25,7 +25,7 @@ fi
 FRONTIERS=("$@")
 
 if [[ ${#FRONTIERS[@]} -eq 0 ]]; then
-  echo "Usage: blueprint-launch-session.sh [--expanded] <frontier-path> ..." >&2
+  echo "Usage: cavekit-launch-session.sh [--expanded] <frontier-path> ..." >&2
   exit 1
 fi
 
@@ -75,7 +75,7 @@ write_launcher() {
   local name="$3"
   local resuming="$4"
   local launcher
-  launcher=$(mktemp /tmp/blueprint-launch-${name}-XXXXXX.sh)
+  launcher=$(mktemp /tmp/cavekit-launch-${name}-XXXXXX.sh)
 
   local frontier_basename
   frontier_basename=$(basename "$frontier_path")
@@ -91,7 +91,7 @@ write_launcher() {
 #!/bin/bash
 rm -f "$launcher"
 cd "$project_dir"
-echo "Blueprint Agent: $name [$mode_label]"
+echo "Cavekit Agent: $name [$mode_label]"
 echo "Directory: $project_dir"
 echo "Frontier: $frontier_basename"
 echo ""
@@ -131,11 +131,11 @@ if [[ "$EXPANDED" == "true" ]]; then
 
     tmux split-window -h -t "$SESSION_NAME:${WIN_IDX}" -l "$RIGHT_WIDTH" -c "$PROJECT_ROOT" \
       "exec bash \"$SCRIPT_DIR/dashboard-progress.sh\""
-    tmux select-pane -T "blueprint-progress"
+    tmux select-pane -T "cavekit-progress"
 
     tmux split-window -v -t "$SESSION_NAME:${WIN_IDX}" -c "$PROJECT_ROOT" \
       "exec bash \"$SCRIPT_DIR/dashboard-activity.sh\""
-    tmux select-pane -T "blueprint-activity"
+    tmux select-pane -T "cavekit-activity"
 
     # Focus main pane
     tmux select-pane -t "$SESSION_NAME:${WIN_IDX}.0"
@@ -158,7 +158,7 @@ else
     launcher=$(write_launcher "$PROJECT_ROOT" "$frontier" "$name" "${RESUMING[$i]}")
 
     if [[ "$FIRST" == "true" ]]; then
-      tmux new-session -d -s "$SESSION_NAME" -n "blueprint-agents" -c "$PROJECT_ROOT" \
+      tmux new-session -d -s "$SESSION_NAME" -n "cavekit-agents" -c "$PROJECT_ROOT" \
         "bash $launcher; exec bash"
       FIRST=false
     else
@@ -210,8 +210,8 @@ fi
 
 # ─── Start status poller ────────────────────────────────────────────────────
 
-if [[ -x "$SCRIPT_DIR/blueprint-status-poller.sh" ]]; then
-  "$SCRIPT_DIR/blueprint-status-poller.sh" &
+if [[ -x "$SCRIPT_DIR/cavekit-status-poller.sh" ]]; then
+  "$SCRIPT_DIR/cavekit-status-poller.sh" &
 fi
 
 # ─── Enable mouse mode ───────────────────────────────────────────────────────
@@ -221,7 +221,7 @@ tmux set-option -t "$SESSION_NAME" mouse on 2>/dev/null || true
 # ─── Report & attach ────────────────────────────────────────────────────────
 
 echo ""
-echo "Launched ${#FRONTIERS[@]} Blueprint agents in $PROJECT_ROOT:"
+echo "Launched ${#FRONTIERS[@]} Cavekit agents in $PROJECT_ROOT:"
 for i in "${!NAMES[@]}"; do
   echo "  ${NAMES[$i]}"
 done
@@ -232,7 +232,7 @@ if [[ "$EXPANDED" == "true" ]]; then
   echo "  Switch windows: Ctrl-b + number"
 fi
 echo "  Detach: Ctrl-b d"
-echo "  Kill all: blueprint --kill"
+echo "  Kill all: cavekit --kill"
 echo ""
 
 exec tmux attach-session -t "$SESSION_NAME"
