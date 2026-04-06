@@ -3,7 +3,7 @@ created: "2026-03-20T00:00:00Z"
 last_edited: "2026-03-20T00:00:00Z"
 ---
 
-# Blueprint: Build Lifecycle
+# Cavekit: Build Lifecycle
 
 ## Scope
 Robust worktree lifecycle management for the build system. Covers keeping worktrees fresh with main, forwarding environment variables, and providing structured recovery options when builds fail or get interrupted.
@@ -57,14 +57,14 @@ Robust worktree lifecycle management for the build system. Covers keeping worktr
 **Dependencies:** R3
 
 ## Out of Scope
-- Changing the worktree directory convention (`../{project}-blueprint-{name}`)
+- Changing the worktree directory convention (`../{project}-cavekit-{name}`)
 - Multi-repo worktree support (only single-repo projects)
 - Automatic conflict resolution during rebase (conflicts require user intervention)
 - Worktree creation for non-build purposes
 
 ## Cross-References
-- See also: blueprint-spec-sync.md (worktree changes must be on main before `/bp:revise` can scan them)
-- See also: blueprint-worktree.md (existing worktree creation and discovery primitives this domain builds on)
-- See also: blueprint-session.md (instance lifecycle triggers build lifecycle operations)
+- See also: cavekit-spec-sync.md (worktree changes must be on main before `/bp:revise` can scan them)
+- See also: cavekit-worktree.md (existing worktree creation and discovery primitives this domain builds on)
+- See also: cavekit-session.md (instance lifecycle triggers build lifecycle operations)
 
 ## Changelog

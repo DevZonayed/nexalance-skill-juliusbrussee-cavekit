@@ -25,11 +25,11 @@ The bubbletea-based TUI that replaces the current tmux split-pane layout. Render
 **Acceptance Criteria:**
 - [ ] Each row shows: index number, title, branch name, diff stats (+N, -N), status indicator
 - [ ] Status indicators: green dot = Running, yellow dot = Ready, spinner = Loading, grey = Paused
-- [ ] Blueprint-specific: shows `{done}/{total} tasks` next to each instance
+- [ ] Cavekit-specific: shows `{done}/{total} tasks` next to each instance
 - [ ] Navigate with j/k or arrow keys
 - [ ] Selected instance highlighted with border/background
 - [ ] Mouse click selects instance
-**Dependencies:** R1, blueprint-session R1
+**Dependencies:** R1, cavekit-session R1
 
 ### R3: Tabbed Content Window
 **Description:** Right panel with Preview, Diff, and Terminal tabs.
@@ -48,7 +48,7 @@ The bubbletea-based TUI that replaces the current tmux split-pane layout. Render
 - [ ] Supports scroll mode (Shift+Up/Down to enter, Esc to exit)
 - [ ] In scroll mode, captures full scrollback history
 - [ ] Shows fallback message when no instance is selected or instance is paused
-**Dependencies:** R3, blueprint-tmux R2
+**Dependencies:** R3, cavekit-tmux R2
 
 ### R5: Diff Tab
 **Description:** Shows git diff between the instance's branch and main.
@@ -57,7 +57,7 @@ The bubbletea-based TUI that replaces the current tmux split-pane layout. Render
 - [ ] Scrollable with Shift+Up/Down
 - [ ] Shows diff stats summary at top (files changed, +insertions, -deletions)
 - [ ] Updates when instance changes or on metadata tick
-**Dependencies:** R3, blueprint-worktree R2
+**Dependencies:** R3, cavekit-worktree R2
 
 ### R6: Terminal Tab
 **Description:** An independent terminal session in the instance's worktree directory.
@@ -66,7 +66,7 @@ The bubbletea-based TUI that replaces the current tmux split-pane layout. Render
 - [ ] Displays captured pane content (same as preview but for the terminal session)
 - [ ] Press Enter to attach full-screen (interact directly)
 - [ ] Sessions are cached per instance and preserved when switching between instances
-**Dependencies:** R3, blueprint-tmux R1
+**Dependencies:** R3, cavekit-tmux R1
 
 ### R7: Bottom Menu
 **Description:** Shows available keyboard shortcuts.
@@ -84,16 +84,16 @@ The bubbletea-based TUI that replaces the current tmux split-pane layout. Render
 - [ ] Name input validates: non-empty, max 32 chars
 - [ ] On Enter: creates instance, starts worktree+tmux, sends `/bp:build --filter {name}`
 - [ ] Esc cancels and removes the pending instance
-**Dependencies:** R2, R7, blueprint-session R2
+**Dependencies:** R2, R7, cavekit-session R2
 
-### R9: Blueprint Progress Display
-**Description:** Blueprint-specific progress information integrated into the UI.
+### R9: Cavekit Progress Display
+**Description:** Cavekit-specific progress information integrated into the UI.
 **Acceptance Criteria:**
 - [ ] Instance list shows task progress: `3/12` or `✓` if complete
 - [ ] Progress bar or fraction visible per-instance
 - [ ] Current working task ID shown when instance is Running
 - [ ] Tier completion markers (Tier 0 ✓, Tier 1 >, Tier 2 -)
-**Dependencies:** R2, blueprint-site R3, blueprint-site R5
+**Dependencies:** R2, cavekit-site R3, cavekit-site R5
 
 ### R10: Overlays
 **Description:** Modal overlays for text input, confirmations, and help screens.
@@ -113,7 +113,7 @@ The bubbletea-based TUI that replaces the current tmux split-pane layout. Render
 - [ ] Done sites shown as struck-through/disabled
 - [ ] In-progress sites shown with resume indicator
 - [ ] Multi-select support for launching multiple agents at once
-**Dependencies:** R8, blueprint-site R1, blueprint-site R4
+**Dependencies:** R8, cavekit-site R1, cavekit-site R4
 
 ## Out of Scope
 - Web-based UI
@@ -129,7 +129,7 @@ The bubbletea-based TUI that replaces the current tmux split-pane layout. Render
 - [ ] On each tick: run AutoYes.Check for all active instances if auto-yes enabled
 - [ ] On each tick: update instance status via StatusDetector for all active instances
 - [ ] PreviewTab, DiffTab, TerminalTab are instantiated in App and their output piped to TabContent
-**Dependencies:** R1, R4, R5, blueprint-session R5, blueprint-session R6
+**Dependencies:** R1, R4, R5, cavekit-session R5, cavekit-session R6
 
 ### R13: Action Handler Completeness
 **Description:** All mapped key actions must have corresponding handlers in App.Update.
@@ -139,13 +139,13 @@ The bubbletea-based TUI that replaces the current tmux split-pane layout. Render
 - [ ] ActionCheckout: opens a shell in the selected instance's worktree directory
 - [ ] ActionResume: calls sessionMgr.Resume for paused instances
 - [ ] ActionScrollUp/Down: scrolls preview or diff tab content
-**Dependencies:** R1, blueprint-tmux R3
+**Dependencies:** R1, cavekit-tmux R3
 
 ## Cross-References
-- See also: blueprint-session.md (TUI controls sessions)
-- See also: blueprint-tmux.md (preview captures)
-- See also: blueprint-site.md (progress data)
-- See also: blueprint-cli.md (TUI is launched by CLI)
+- See also: cavekit-session.md (TUI controls sessions)
+- See also: cavekit-tmux.md (preview captures)
+- See also: cavekit-site.md (progress data)
+- See also: cavekit-cli.md (TUI is launched by CLI)
 
 ## Changes
 - 2026-03-17: Added R12 (Tick-Driven Data Flow) — discovered during inspection (finding F-001, F-002, F-004, F-005)

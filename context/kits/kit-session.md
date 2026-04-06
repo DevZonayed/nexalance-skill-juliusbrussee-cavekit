@@ -28,12 +28,12 @@ The session (or "instance") model that ties together a tmux session, git worktre
 - [ ] Pausing: detaches tmux session from TUI tracking (session keeps running)
 - [ ] Resuming: re-attaches tmux session to TUI tracking
 - [ ] Killing: kills tmux session, optionally removes worktree and branch
-**Dependencies:** R1, blueprint-tmux R1, blueprint-worktree R1
+**Dependencies:** R1, cavekit-tmux R1, cavekit-worktree R1
 
 ### R3: Persistence
 **Description:** Save and restore instance state across TUI restarts.
 **Acceptance Criteria:**
-- [ ] Instances are saved to `~/.blueprint-monitor/state.json` (or configurable path)
+- [ ] Instances are saved to `~/.cavekit/state.json` (or configurable path)
 - [ ] Saved state includes: title, site path, worktree path, program, status
 - [ ] On load, validates that tmux sessions and worktrees still exist
 - [ ] Stale instances (tmux session gone) are marked accordingly
@@ -53,15 +53,15 @@ The session (or "instance") model that ties together a tmux session, git worktre
 - [ ] When enabled, monitors pane content for permission prompts
 - [ ] Sends Enter keystroke to approve
 - [ ] Also handles trust prompts and MCP server prompts
-**Dependencies:** R2, blueprint-tmux R4
+**Dependencies:** R2, cavekit-tmux R4
 
-### R6: Blueprint Progress Integration
+### R6: Cavekit Progress Integration
 **Description:** Each instance tracks its site progress for display.
 **Acceptance Criteria:**
 - [ ] Instance exposes: tasks done, tasks total, current tier, current task ID
 - [ ] Progress is updated periodically (every 500ms metadata tick)
-- [ ] Progress data comes from blueprint-site task status tracking
-**Dependencies:** R1, blueprint-site R3
+- [ ] Progress data comes from cavekit-site task status tracking
+**Dependencies:** R1, cavekit-site R3
 
 ## Out of Scope
 - Multiple programs per instance (each instance runs one program)
@@ -69,8 +69,8 @@ The session (or "instance") model that ties together a tmux session, git worktre
 - Automatic scaling based on system resources
 
 ## Cross-References
-- See also: blueprint-tmux.md (tmux session backend)
-- See also: blueprint-worktree.md (worktree creation)
-- See also: blueprint-site.md (progress tracking)
-- See also: blueprint-tui.md (displays and controls instances)
-- See also: blueprint-build-lifecycle.md (instance lifecycle triggers build lifecycle operations)
+- See also: cavekit-tmux.md (tmux session backend)
+- See also: cavekit-worktree.md (worktree creation)
+- See also: cavekit-site.md (progress tracking)
+- See also: cavekit-tui.md (displays and controls instances)
+- See also: cavekit-build-lifecycle.md (instance lifecycle triggers build lifecycle operations)

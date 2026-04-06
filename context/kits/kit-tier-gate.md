@@ -3,7 +3,7 @@ created: "2026-03-31T00:00:00Z"
 last_edited: "2026-03-31T00:00:00Z"
 ---
 
-# Blueprint: Tier Gate
+# Cavekit: Tier Gate
 
 ## Scope
 The mechanism that invokes Codex adversarial review at the end of every build tier and decides whether to block or proceed based on finding severity.
@@ -35,7 +35,7 @@ User settings to control gating behavior.
 - [ ] Settings stored alongside Codex Bridge config (same config mechanism)
 
 ### R4: Finding Integration
-Codex review findings are captured in Blueprint's standard tracking.
+Codex review findings are captured in Cavekit's standard tracking.
 - [ ] All findings appended to `context/impl/impl-review-findings.md` with tier number and source
 - [ ] Each finding includes: severity (P0-P3), file, line, description, tier number, source (`codex-tier-gate`)
 - [ ] Fix tasks generated from P0/P1 findings reference the original finding ID
@@ -47,8 +47,8 @@ Codex review findings are captured in Blueprint's standard tracking.
 - Changing the build loop's wave/frontier logic beyond adding the tier boundary hook
 
 ## Cross-References
-- See also: blueprint-codex-bridge.md (R1 for detection, R3 for review invocation and finding format)
-- See also: blueprint-speculative-review.md (speculative review feeds findings into tier gate gating logic)
+- See also: cavekit-codex-bridge.md (R1 for detection, R3 for review invocation and finding format)
+- See also: cavekit-speculative-review.md (speculative review feeds findings into tier gate gating logic)
 
 ## Changelog
 - 2026-03-31: Initial draft

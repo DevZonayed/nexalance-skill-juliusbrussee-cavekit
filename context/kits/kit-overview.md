@@ -3,16 +3,16 @@ created: "2026-04-01T11:50:00Z"
 last_edited: "2026-04-01T11:50:00Z"
 ---
 
-# Blueprint Overview
+# Cavekit Overview
 
 ## Project
-Premium GitHub Pages website for the Blueprint Claude Code plugin. Two static HTML files deployed to the `gh-pages` branch: a marketing landing page and a single-page documentation reference. "Neon blueprint evolved" visual identity — dark backgrounds, glassmorphism surfaces, neon-blue accents, scroll-driven animations. Zero dependencies, zero build step.
+Premium GitHub Pages website for the Cavekit Claude Code plugin. Two static HTML files deployed to the `gh-pages` branch: a marketing landing page and a single-page documentation reference. "Neon cavekit evolved" visual identity — dark backgrounds, glassmorphism surfaces, neon-blue accents, scroll-driven animations. Zero dependencies, zero build step.
 
 ## Domain Index
-| Domain | Blueprint File | Requirements | Status | Description |
+| Domain | Cavekit File | Requirements | Status | Description |
 |--------|-----------|-------------|--------|-------------|
-| Marketing Landing Page | blueprint-landing-page.md | 13 | DRAFT | 8-section scroll experience: hero, problem, DABI phases, Codex review, Ralph Loop, parallel execution, install, footer |
-| Documentation Page | blueprint-docs-page.md | 16 | DRAFT | Single-page docs with sidebar nav: overview, quick start, commands, methodology, Codex integration, skills, configuration |
+| Marketing Landing Page | cavekit-landing-page.md | 13 | DRAFT | 8-section scroll experience: hero, problem, DABI phases, Codex review, Ralph Loop, parallel execution, install, footer |
+| Documentation Page | cavekit-docs-page.md | 16 | DRAFT | Single-page docs with sidebar nav: overview, quick start, commands, methodology, Codex integration, skills, configuration |
 
 ## Cross-Reference Map
 | Domain A | Interacts With | Interaction Type |

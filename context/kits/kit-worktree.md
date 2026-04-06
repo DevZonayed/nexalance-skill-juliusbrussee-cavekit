@@ -11,9 +11,9 @@ Creating and managing git worktrees for isolated agent execution. Each agent get
 ## Requirements
 
 ### R1: Worktree Lifecycle
-**Description:** Create, detect, and remove git worktrees for Blueprint agents.
+**Description:** Create, detect, and remove git worktrees for Cavekit agents.
 **Acceptance Criteria:**
-- [ ] Creates worktree at `{project_root}/../{project_name}-blueprint-{site_name}` on branch `blueprint/{site_name}`
+- [ ] Creates worktree at `{project_root}/../{project_name}-cavekit-{site_name}` on branch `cavekit/{site_name}`
 - [ ] Creates the branch from HEAD if it doesn't exist
 - [ ] Detects if a worktree already exists and reuses it
 - [ ] Can remove a worktree and its branch via `git worktree remove --force` + `git branch -D`
@@ -29,9 +29,9 @@ Creating and managing git worktrees for isolated agent execution. Each agent get
 **Dependencies:** R1
 
 ### R3: Worktree Discovery
-**Description:** Find all existing Blueprint worktrees for the current project.
+**Description:** Find all existing Cavekit worktrees for the current project.
 **Acceptance Criteria:**
-- [ ] Scans `{project_root}/../{project_name}-blueprint-*` directories
+- [ ] Scans `{project_root}/../{project_name}-cavekit-*` directories
 - [ ] Returns worktree path, branch name, and derived site name for each
 - [ ] Detects if a worktree has an active Ralph Loop (`.claude/ralph-loop.local.md` exists)
 **Dependencies:** R1
@@ -47,9 +47,9 @@ Creating and managing git worktrees for isolated agent execution. Each agent get
 ## Out of Scope
 - Git authentication/credentials
 - Merge conflict resolution (handled by `/bp:merge`)
-- Non-Blueprint worktree management
+- Non-Cavekit worktree management
 
 ## Cross-References
-- See also: blueprint-session.md (creates worktrees per session)
-- See also: blueprint-site.md (site name drives worktree naming)
-- See also: blueprint-build-lifecycle.md (builds on worktree primitives for lifecycle management)
+- See also: cavekit-session.md (creates worktrees per session)
+- See also: cavekit-site.md (site name drives worktree naming)
+- See also: cavekit-build-lifecycle.md (builds on worktree primitives for lifecycle management)

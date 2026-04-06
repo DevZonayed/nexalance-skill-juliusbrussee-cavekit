@@ -3,16 +3,16 @@ created: "2026-04-01T11:50:00Z"
 last_edited: "2026-04-01T11:50:00Z"
 ---
 
-# Blueprint: Marketing Landing Page
+# Cavekit: Marketing Landing Page
 
 ## Scope
 
-A single-file (`index.html`) premium marketing landing page for the Blueprint Claude Code plugin, deployed to the `gh-pages` branch. Replaces the current site at `juliusbrussee.github.io/blueprint/`. Zero dependencies, zero build step. The page communicates what Blueprint does, why it matters, and how to install it through 8 scroll-driven sections with a "neon blueprint evolved" visual identity.
+A single-file (`index.html`) premium marketing landing page for the Cavekit Claude Code plugin, deployed to the `gh-pages` branch. Replaces the current site at `juliusbrussee.github.io/cavekit/`. Zero dependencies, zero build step. The page communicates what Cavekit does, why it matters, and how to install it through 8 scroll-driven sections with a "neon cavekit evolved" visual identity.
 
 ## Requirements
 
 ### R1: Visual Identity System
-**Description:** The page must establish a cohesive "neon blueprint evolved" design language used consistently across all sections.
+**Description:** The page must establish a cohesive "neon cavekit evolved" design language used consistently across all sections.
 **Acceptance Criteria:**
 - [ ] CSS custom properties define the full color palette: near-black background (`~#0a0e1a`), neon-blue primary accent, red diagnostic, green pass, muted text colors, glassmorphism surface values
 - [ ] Background uses a subtle noise texture + very faint grid (grid line opacity ~0.03-0.04)
@@ -22,10 +22,10 @@ A single-file (`index.html`) premium marketing landing page for the Blueprint Cl
 - [ ] Glow effects use `text-shadow` and `box-shadow` with accent color at low opacity — never harsh or garish
 
 ### R2: Hero Section
-**Description:** Full-viewport hero section that immediately communicates what Blueprint is and provides the install command.
+**Description:** Full-viewport hero section that immediately communicates what Cavekit is and provides the install command.
 **Acceptance Criteria:**
 - [ ] Section fills 100vh, content is centered vertically and horizontally
-- [ ] Contains, top to bottom: version badge pill (`v2.1.0`), title ("Blueprint" in display font ~72px desktop), subtitle, DABI pipeline SVG diagram, install terminal block, two links (GitHub + Docs)
+- [ ] Contains, top to bottom: version badge pill (`v2.1.0`), title ("Cavekit" in display font ~72px desktop), subtitle, DABI pipeline SVG diagram, install terminal block, two links (GitHub + Docs)
 - [ ] DABI pipeline SVG shows the full flow: YOU → DRAFT → ARCHITECT → fan-out to 3 agents → MERGE → main
 - [ ] Pipeline SVG boxes have glassmorphism fills
 - [ ] A glowing particle traces the pipeline path on page load using SVG `<animateMotion>` with glow `drop-shadow` filter
@@ -34,7 +34,7 @@ A single-file (`index.html`) premium marketing landing page for the Blueprint Cl
 - [ ] Hero loads with a staggered animation sequence: badge → title → subtitle → pipeline → install → links, with 50-100ms stagger delays
 
 ### R3: Problem Section
-**Description:** Communicates the 4 pain points Blueprint solves using diagnostic-styled cards.
+**Description:** Communicates the 4 pain points Cavekit solves using diagnostic-styled cards.
 **Acceptance Criteria:**
 - [ ] Section label in monospace: "THE PROBLEM"
 - [ ] Headline text: "AI coding agents are powerful. They fail in predictable ways."
@@ -50,11 +50,11 @@ A single-file (`index.html`) premium marketing landing page for the Blueprint Cl
 - [ ] 4 phase cards in horizontal row (vertical stack on mobile): Draft, Architect, Build, Inspect
 - [ ] Each card shows: large phase letter (48px, blue glow), phase name, command in monospace pill, one-line description
 - [ ] Cards connected by animated glow lines with a subtle pulse traveling along them
-- [ ] Below cards: paragraph explaining the blueprint-as-source-of-truth concept
+- [ ] Below cards: paragraph explaining the cavekit-as-source-of-truth concept
 - [ ] Cards stagger from left to right on scroll (100ms delay between each)
 
 ### R5: Dual-Model Advantage Section
-**Description:** Showcases the Codex adversarial review system — Blueprint's key differentiator.
+**Description:** Showcases the Codex adversarial review system — Cavekit's key differentiator.
 **Acceptance Criteria:**
 - [ ] Section label: "ADVERSARIAL REVIEW"
 - [ ] Headline: "Two models. Different blind spots. Higher confidence."
@@ -64,7 +64,7 @@ A single-file (`index.html`) premium marketing landing page for the Blueprint Cl
   - Tier Gate (badge: BUILD-TIME): severity table with P0-P3 levels and colored indicators
   - Command Safety (badge: RUNTIME): flow diagram command → fast-path → Codex classifies → verdict
 - [ ] Each card has glassmorphism surface and a colored badge
-- [ ] Below cards: note that all Codex features are additive and Blueprint works without Codex
+- [ ] Below cards: note that all Codex features are additive and Cavekit works without Codex
 - [ ] Cards stagger in vertically on scroll (100ms between each)
 - [ ] Mini diagrams inside cards draw themselves after card is visible (+300ms)
 
@@ -93,10 +93,10 @@ A single-file (`index.html`) premium marketing landing page for the Blueprint Cl
 - [ ] Below: note about circuit breakers and failure handling
 
 ### R8: Get Started Section
-**Description:** The conversion section — makes installing Blueprint unmissable.
+**Description:** The conversion section — makes installing Cavekit unmissable.
 **Acceptance Criteria:**
 - [ ] Section label: "GET STARTED"
-- [ ] Headline: "Two commands. You're building from blueprints."
+- [ ] Headline: "Two commands. You're building from kits."
 - [ ] Large glassmorphism terminal block (max-width ~700px) with fake terminal chrome (three dots + title bar)
 - [ ] Typewriter animation types both install commands at ~40ms/char with random jitter
 - [ ] Blinking cursor follows insertion point during typewriter
@@ -109,7 +109,7 @@ A single-file (`index.html`) premium marketing landing page for the Blueprint Cl
 ### R9: Footer
 **Description:** Minimal branded footer.
 **Acceptance Criteria:**
-- [ ] Single centered line in monospace, muted: "Blueprint — MIT License · Built by Julius Brussee"
+- [ ] Single centered line in monospace, muted: "Cavekit — MIT License · Built by Julius Brussee"
 - [ ] "Julius Brussee" links to GitHub profile
 - [ ] Faint horizontal accent line above footer text
 
@@ -169,7 +169,7 @@ A single-file (`index.html`) premium marketing landing page for the Blueprint Cl
 - No custom domain setup (just `gh-pages` branch deployment)
 
 ## Cross-References
-- See also: blueprint-docs-page.md (linked from hero and Get Started sections)
+- See also: cavekit-docs-page.md (linked from hero and Get Started sections)
 - Docs page shares the same visual identity system (R1)
 
 ## Changelog

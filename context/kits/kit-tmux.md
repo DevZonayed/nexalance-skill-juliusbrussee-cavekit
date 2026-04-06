@@ -61,4 +61,4 @@ Managing detached tmux sessions as the execution backend for Claude Code instanc
 - Multiple panes within a single tmux session
 
 ## Cross-References
-- See also: blueprint-session.md (consumes tmux sessions)
+- See also: cavekit-session.md (consumes tmux sessions)
