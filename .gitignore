@@ -21,3 +21,7 @@ current-site-full.png
 .cavekit/task-status.json
 .cavekit/tasks.json
 .cavekit/capabilities.json
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
+.gitignore
